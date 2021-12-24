@@ -35,6 +35,13 @@ namespace HangmanApp
             this.MMP_WordAssistButton = new System.Windows.Forms.Button();
             this.MMP_PlayButton = new System.Windows.Forms.Button();
             this.MainMenuTitle = new System.Windows.Forms.Label();
+            this.WordAssistMenuPanel = new System.Windows.Forms.Panel();
+            this.WAM_IncorrectLettersLabel = new System.Windows.Forms.Label();
+            this.WAM_Letters_Guessed = new System.Windows.Forms.CheckedListBox();
+            this.WAM_WordCountSliderLabel = new System.Windows.Forms.Label();
+            this.WAM_WordCountSlider = new System.Windows.Forms.TrackBar();
+            this.WordAssistMenuTitle = new System.Windows.Forms.Label();
+            this.WAM_BackButton = new System.Windows.Forms.Button();
             this.GamemodePanel = new System.Windows.Forms.Panel();
             this.GP_LocalNetworkButton = new System.Windows.Forms.Button();
             this.GP_MultiplayerButton = new System.Windows.Forms.Button();
@@ -42,6 +49,8 @@ namespace HangmanApp
             this.GamemodeTitle = new System.Windows.Forms.Label();
             this.GP_BackButton = new System.Windows.Forms.Button();
             this.MainMenuPanel.SuspendLayout();
+            this.WordAssistMenuPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WAM_WordCountSlider)).BeginInit();
             this.GamemodePanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,6 +130,117 @@ namespace HangmanApp
             this.MainMenuTitle.TabIndex = 0;
             this.MainMenuTitle.Text = "Hangman";
             this.MainMenuTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // WordAssistMenuPanel
+            // 
+            this.WordAssistMenuPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.WordAssistMenuPanel.Controls.Add(this.WAM_IncorrectLettersLabel);
+            this.WordAssistMenuPanel.Controls.Add(this.WAM_Letters_Guessed);
+            this.WordAssistMenuPanel.Controls.Add(this.WAM_WordCountSliderLabel);
+            this.WordAssistMenuPanel.Controls.Add(this.WAM_WordCountSlider);
+            this.WordAssistMenuPanel.Controls.Add(this.WordAssistMenuTitle);
+            this.WordAssistMenuPanel.Controls.Add(this.WAM_BackButton);
+            this.WordAssistMenuPanel.Location = new System.Drawing.Point(0, 0);
+            this.WordAssistMenuPanel.Name = "WordAssistMenuPanel";
+            this.WordAssistMenuPanel.Size = new System.Drawing.Size(1264, 681);
+            this.WordAssistMenuPanel.TabIndex = 5;
+            this.WordAssistMenuPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.WordAssistMenuPanel_Paint);
+            // 
+            // WAM_IncorrectLettersLabel
+            // 
+            this.WAM_IncorrectLettersLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.WAM_IncorrectLettersLabel.AutoSize = true;
+            this.WAM_IncorrectLettersLabel.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.WAM_IncorrectLettersLabel.Location = new System.Drawing.Point(1091, 142);
+            this.WAM_IncorrectLettersLabel.Name = "WAM_IncorrectLettersLabel";
+            this.WAM_IncorrectLettersLabel.Size = new System.Drawing.Size(170, 30);
+            this.WAM_IncorrectLettersLabel.TabIndex = 7;
+            this.WAM_IncorrectLettersLabel.Text = "Incorrect Letters";
+            // 
+            // WAM_Letters_Guessed
+            // 
+            this.WAM_Letters_Guessed.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.WAM_Letters_Guessed.CheckOnClick = true;
+            this.WAM_Letters_Guessed.Cursor = System.Windows.Forms.Cursors.Default;
+            this.WAM_Letters_Guessed.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.WAM_Letters_Guessed.FormattingEnabled = true;
+            this.WAM_Letters_Guessed.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z"});
+            this.WAM_Letters_Guessed.Location = new System.Drawing.Point(1091, 175);
+            this.WAM_Letters_Guessed.Name = "WAM_Letters_Guessed";
+            this.WAM_Letters_Guessed.Size = new System.Drawing.Size(170, 472);
+            this.WAM_Letters_Guessed.TabIndex = 6;
+            // 
+            // WAM_WordCountSliderLabel
+            // 
+            this.WAM_WordCountSliderLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.WAM_WordCountSliderLabel.AutoSize = true;
+            this.WAM_WordCountSliderLabel.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.WAM_WordCountSliderLabel.Location = new System.Drawing.Point(363, 142);
+            this.WAM_WordCountSliderLabel.Name = "WAM_WordCountSliderLabel";
+            this.WAM_WordCountSliderLabel.Size = new System.Drawing.Size(148, 30);
+            this.WAM_WordCountSliderLabel.TabIndex = 4;
+            this.WAM_WordCountSliderLabel.Text = "Word Count:3";
+            // 
+            // WAM_WordCountSlider
+            // 
+            this.WAM_WordCountSlider.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.WAM_WordCountSlider.Location = new System.Drawing.Point(363, 175);
+            this.WAM_WordCountSlider.Maximum = 30;
+            this.WAM_WordCountSlider.Minimum = 3;
+            this.WAM_WordCountSlider.Name = "WAM_WordCountSlider";
+            this.WAM_WordCountSlider.Size = new System.Drawing.Size(733, 45);
+            this.WAM_WordCountSlider.TabIndex = 3;
+            this.WAM_WordCountSlider.Value = 3;
+            this.WAM_WordCountSlider.Scroll += new System.EventHandler(this.WAM_WordCountSlider_Scroll);
+            // 
+            // WordAssistMenuTitle
+            // 
+            this.WordAssistMenuTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.WordAssistMenuTitle.AutoSize = true;
+            this.WordAssistMenuTitle.Font = new System.Drawing.Font("Segoe UI", 80F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.WordAssistMenuTitle.Location = new System.Drawing.Point(347, 0);
+            this.WordAssistMenuTitle.Name = "WordAssistMenuTitle";
+            this.WordAssistMenuTitle.Size = new System.Drawing.Size(917, 142);
+            this.WordAssistMenuTitle.TabIndex = 2;
+            this.WordAssistMenuTitle.Text = "Word Assist Menu";
+            // 
+            // WAM_BackButton
+            // 
+            this.WAM_BackButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.WAM_BackButton.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.WAM_BackButton.Location = new System.Drawing.Point(0, 0);
+            this.WAM_BackButton.Name = "WAM_BackButton";
+            this.WAM_BackButton.Size = new System.Drawing.Size(112, 60);
+            this.WAM_BackButton.TabIndex = 1;
+            this.WAM_BackButton.Text = "Back";
+            this.WAM_BackButton.UseVisualStyleBackColor = true;
+            this.WAM_BackButton.Click += new System.EventHandler(this.WAM_BackButton_Click);
             // 
             // GamemodePanel
             // 
@@ -202,13 +322,19 @@ namespace HangmanApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.GamemodePanel);
             this.Controls.Add(this.MainMenuPanel);
+            this.Controls.Add(this.GamemodePanel);
+            this.Controls.Add(this.WordAssistMenuPanel);
+            this.MaximumSize = new System.Drawing.Size(1280, 720);
+            this.MinimumSize = new System.Drawing.Size(1280, 720);
             this.Name = "MainForm";
             this.Text = "Hangman";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.MainMenuPanel.ResumeLayout(false);
             this.MainMenuPanel.PerformLayout();
+            this.WordAssistMenuPanel.ResumeLayout(false);
+            this.WordAssistMenuPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WAM_WordCountSlider)).EndInit();
             this.GamemodePanel.ResumeLayout(false);
             this.GamemodePanel.PerformLayout();
             this.ResumeLayout(false);
@@ -229,6 +355,13 @@ namespace HangmanApp
         private System.Windows.Forms.Button GP_LocalNetworkButton;
         private System.Windows.Forms.Button GP_MultiplayerButton;
         private System.Windows.Forms.Button GP_SingeplayerButton;
+        private System.Windows.Forms.Panel WordAssistMenuPanel;
+        private System.Windows.Forms.Label WordAssistMenuTitle;
+        private System.Windows.Forms.Button WAM_BackButton;
+        private System.Windows.Forms.TrackBar WAM_WordCountSlider;
+        private System.Windows.Forms.Label WAM_WordCountSliderLabel;
+        private System.Windows.Forms.Label WAM_IncorrectLettersLabel;
+        private System.Windows.Forms.CheckedListBox WAM_Letters_Guessed;
     }
 }
 

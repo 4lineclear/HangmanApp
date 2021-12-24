@@ -12,7 +12,7 @@ namespace HangmanApp
 {
     public partial class MainForm : Form
     {
-        Panel[] panels = new Panel[2];
+        Panel[] panels = new Panel[3];
         public MainForm()
         {
             InitializeComponent();
@@ -21,6 +21,7 @@ namespace HangmanApp
         {
             this.panels[0] = this.MainMenuPanel;
             this.panels[1] = this.GamemodePanel;
+            this.panels[2] = this.WordAssistMenuPanel;
         }
         
         #region MainMenu Panel EventHandlers
@@ -31,7 +32,7 @@ namespace HangmanApp
 
         private void MMP_WordAssistButton_Click(object sender, EventArgs e)
         {
-
+            this.panels[2].BringToFront();
         }
 
         private void MMP_HelpButton_Click(object sender, EventArgs e)
@@ -66,5 +67,21 @@ namespace HangmanApp
 
         }
         #endregion
+
+        private void WAM_BackButton_Click(object sender, EventArgs e)
+        {
+            this.panels[0].BringToFront();
+        }
+
+        private void WAM_WordCountSlider_Scroll(object sender, EventArgs e)
+        {
+            this.WAM_WordCountSliderLabel.Text = "Word Count:"+this.WAM_WordCountSlider.Value;
+        }
+
+        private void WordAssistMenuPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
     }
 }
