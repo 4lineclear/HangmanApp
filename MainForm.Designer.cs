@@ -32,7 +32,7 @@ namespace HangmanApp
             this.MainMenuPanel = new System.Windows.Forms.Panel();
             this.MMP_OptionsButton = new System.Windows.Forms.Button();
             this.MMP_HelpButton = new System.Windows.Forms.Button();
-            this.MMP_WordGuesserButton = new System.Windows.Forms.Button();
+            this.MMP_WordAssistButton = new System.Windows.Forms.Button();
             this.MMP_PlayButton = new System.Windows.Forms.Button();
             this.MainMenuTitle = new System.Windows.Forms.Label();
             this.GamemodePanel = new System.Windows.Forms.Panel();
@@ -47,12 +47,12 @@ namespace HangmanApp
             // 
             // MainMenuPanel
             // 
+            this.MainMenuPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MainMenuPanel.Controls.Add(this.MMP_OptionsButton);
             this.MainMenuPanel.Controls.Add(this.MMP_HelpButton);
-            this.MainMenuPanel.Controls.Add(this.MMP_WordGuesserButton);
+            this.MainMenuPanel.Controls.Add(this.MMP_WordAssistButton);
             this.MainMenuPanel.Controls.Add(this.MMP_PlayButton);
             this.MainMenuPanel.Controls.Add(this.MainMenuTitle);
-            this.MainMenuPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainMenuPanel.Location = new System.Drawing.Point(0, 0);
             this.MainMenuPanel.Name = "MainMenuPanel";
             this.MainMenuPanel.Size = new System.Drawing.Size(1264, 681);
@@ -60,6 +60,7 @@ namespace HangmanApp
             // 
             // MMP_OptionsButton
             // 
+            this.MMP_OptionsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MMP_OptionsButton.Font = new System.Drawing.Font("Segoe UI", 70F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MMP_OptionsButton.Location = new System.Drawing.Point(808, 497);
             this.MMP_OptionsButton.Name = "MMP_OptionsButton";
@@ -72,6 +73,7 @@ namespace HangmanApp
             // 
             // MMP_HelpButton
             // 
+            this.MMP_HelpButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MMP_HelpButton.Font = new System.Drawing.Font("Segoe UI", 70F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MMP_HelpButton.Location = new System.Drawing.Point(393, 497);
             this.MMP_HelpButton.Name = "MMP_HelpButton";
@@ -82,20 +84,22 @@ namespace HangmanApp
             this.MMP_HelpButton.UseVisualStyleBackColor = true;
             this.MMP_HelpButton.Click += new System.EventHandler(this.MMP_HelpButton_Click);
             // 
-            // MMP_WordGuesserButton
+            // MMP_WordAssistButton
             // 
-            this.MMP_WordGuesserButton.Font = new System.Drawing.Font("Segoe UI", 75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MMP_WordGuesserButton.Location = new System.Drawing.Point(393, 346);
-            this.MMP_WordGuesserButton.Name = "MMP_WordGuesserButton";
-            this.MMP_WordGuesserButton.Size = new System.Drawing.Size(822, 145);
-            this.MMP_WordGuesserButton.TabIndex = 2;
-            this.MMP_WordGuesserButton.Text = "Word Guesser";
-            this.MMP_WordGuesserButton.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.MMP_WordGuesserButton.UseVisualStyleBackColor = true;
-            this.MMP_WordGuesserButton.Click += new System.EventHandler(this.MMP_WordGuesserButton_Click);
+            this.MMP_WordAssistButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MMP_WordAssistButton.Font = new System.Drawing.Font("Segoe UI", 75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MMP_WordAssistButton.Location = new System.Drawing.Point(393, 346);
+            this.MMP_WordAssistButton.Name = "MMP_WordAssistButton";
+            this.MMP_WordAssistButton.Size = new System.Drawing.Size(822, 145);
+            this.MMP_WordAssistButton.TabIndex = 2;
+            this.MMP_WordAssistButton.Text = "Word Assist";
+            this.MMP_WordAssistButton.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.MMP_WordAssistButton.UseVisualStyleBackColor = true;
+            this.MMP_WordAssistButton.Click += new System.EventHandler(this.MMP_WordAssistButton_Click);
             // 
             // MMP_PlayButton
             // 
+            this.MMP_PlayButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MMP_PlayButton.Font = new System.Drawing.Font("Segoe UI", 75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MMP_PlayButton.Location = new System.Drawing.Point(393, 195);
             this.MMP_PlayButton.Name = "MMP_PlayButton";
@@ -108,7 +112,7 @@ namespace HangmanApp
             // 
             // MainMenuTitle
             // 
-            this.MainMenuTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MainMenuTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MainMenuTitle.AutoSize = true;
             this.MainMenuTitle.Font = new System.Drawing.Font("Segoe UI", 140F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MainMenuTitle.Location = new System.Drawing.Point(363, -56);
@@ -120,12 +124,12 @@ namespace HangmanApp
             // 
             // GamemodePanel
             // 
+            this.GamemodePanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GamemodePanel.Controls.Add(this.GP_LocalNetworkButton);
             this.GamemodePanel.Controls.Add(this.GP_MultiplayerButton);
             this.GamemodePanel.Controls.Add(this.GP_SingeplayerButton);
             this.GamemodePanel.Controls.Add(this.GamemodeTitle);
             this.GamemodePanel.Controls.Add(this.GP_BackButton);
-            this.GamemodePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GamemodePanel.Location = new System.Drawing.Point(0, 0);
             this.GamemodePanel.Name = "GamemodePanel";
             this.GamemodePanel.Size = new System.Drawing.Size(1264, 681);
@@ -133,6 +137,7 @@ namespace HangmanApp
             // 
             // GP_LocalNetworkButton
             // 
+            this.GP_LocalNetworkButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GP_LocalNetworkButton.Font = new System.Drawing.Font("Segoe UI", 75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.GP_LocalNetworkButton.Location = new System.Drawing.Point(393, 497);
             this.GP_LocalNetworkButton.Name = "GP_LocalNetworkButton";
@@ -145,6 +150,7 @@ namespace HangmanApp
             // 
             // GP_MultiplayerButton
             // 
+            this.GP_MultiplayerButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GP_MultiplayerButton.Font = new System.Drawing.Font("Segoe UI", 75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.GP_MultiplayerButton.Location = new System.Drawing.Point(393, 346);
             this.GP_MultiplayerButton.Name = "GP_MultiplayerButton";
@@ -157,6 +163,7 @@ namespace HangmanApp
             // 
             // GP_SingeplayerButton
             // 
+            this.GP_SingeplayerButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GP_SingeplayerButton.Font = new System.Drawing.Font("Segoe UI", 75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.GP_SingeplayerButton.Location = new System.Drawing.Point(393, 195);
             this.GP_SingeplayerButton.Name = "GP_SingeplayerButton";
@@ -169,7 +176,7 @@ namespace HangmanApp
             // 
             // GamemodeTitle
             // 
-            this.GamemodeTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.GamemodeTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GamemodeTitle.AutoSize = true;
             this.GamemodeTitle.Font = new System.Drawing.Font("Segoe UI", 120F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.GamemodeTitle.Location = new System.Drawing.Point(352, -44);
@@ -180,6 +187,7 @@ namespace HangmanApp
             // 
             // GP_BackButton
             // 
+            this.GP_BackButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GP_BackButton.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.GP_BackButton.Location = new System.Drawing.Point(0, 0);
             this.GP_BackButton.Name = "GP_BackButton";
@@ -194,8 +202,8 @@ namespace HangmanApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.MainMenuPanel);
             this.Controls.Add(this.GamemodePanel);
+            this.Controls.Add(this.MainMenuPanel);
             this.Name = "MainForm";
             this.Text = "Hangman";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -213,7 +221,7 @@ namespace HangmanApp
         private System.Windows.Forms.Label MainMenuTitle;
         private System.Windows.Forms.Button MMP_PlayButton;
         private System.Windows.Forms.Button MMP_HelpButton;
-        private System.Windows.Forms.Button MMP_WordGuesserButton;
+        private System.Windows.Forms.Button MMP_WordAssistButton;
         private System.Windows.Forms.Button MMP_OptionsButton;
         private System.Windows.Forms.Panel GamemodePanel;
         private System.Windows.Forms.Button GP_BackButton;

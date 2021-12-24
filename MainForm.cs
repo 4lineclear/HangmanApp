@@ -29,7 +29,7 @@ namespace HangmanApp
             this.panels[1].BringToFront();
         }
 
-        private void MMP_WordGuesserButton_Click(object sender, EventArgs e)
+        private void MMP_WordAssistButton_Click(object sender, EventArgs e)
         {
 
         }
