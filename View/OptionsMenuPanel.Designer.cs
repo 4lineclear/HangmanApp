@@ -102,7 +102,7 @@ namespace HangmanApp
         }
 
         #endregion
-        private System.Windows.Forms.TableLayoutPanel MainPanel;
+        private new System.Windows.Forms.TableLayoutPanel MainPanel;
         private ParentButton BackButton;
         private System.Windows.Forms.Label MainTitle;
     }

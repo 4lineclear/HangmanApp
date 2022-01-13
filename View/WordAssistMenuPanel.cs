@@ -38,13 +38,15 @@ namespace HangmanApp
         }
         private TextBox CreateNextCorrectTextBox(int count)
         {
-            TextBox temp = new TextBox();
-            temp.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            temp.Location = new System.Drawing.Point(3, 3);
-            temp.MaxLength = 1;
-            temp.Name = $"CorrectTextBox{count}";
-            temp.Size = new System.Drawing.Size(26, 36);
-            temp.TabIndex = count;
+            var temp = new TextBox
+            {
+                Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point),
+                Location = new System.Drawing.Point(3, 3),
+                MaxLength = 1,
+                Name = $"CorrectTextBox{count}",
+                Size = new System.Drawing.Size(26, 36),
+                TabIndex = count
+            };
             return temp;
         }
     }
