@@ -47,8 +47,6 @@ namespace HangmanApp
             this.mainMenuPanel1.Name = "mainMenuPanel1";
             this.mainMenuPanel1.Size = new System.Drawing.Size(1280, 720);
             this.mainMenuPanel1.TabIndex = 0;
-            this.mainMenuPanel1.TreeChildren = null;
-            this.mainMenuPanel1.TreeParent = this.mainMenuPanel1;
             // 
             // gamemodeMenuPanel1
             // 
@@ -59,8 +57,6 @@ namespace HangmanApp
             this.gamemodeMenuPanel1.Name = "gamemodeMenuPanel1";
             this.gamemodeMenuPanel1.Size = new System.Drawing.Size(1280, 720);
             this.gamemodeMenuPanel1.TabIndex = 1;
-            this.gamemodeMenuPanel1.TreeChildren = null;
-            this.gamemodeMenuPanel1.TreeParent = this.mainMenuPanel1;
             // 
             // wordAssistMenuPanel1
             // 
@@ -71,8 +67,6 @@ namespace HangmanApp
             this.wordAssistMenuPanel1.Name = "wordAssistMenuPanel1";
             this.wordAssistMenuPanel1.Size = new System.Drawing.Size(1280, 720);
             this.wordAssistMenuPanel1.TabIndex = 2;
-            this.wordAssistMenuPanel1.TreeChildren = null;
-            this.wordAssistMenuPanel1.TreeParent = this.mainMenuPanel1;
             // 
             // helpPagePanel1
             // 
@@ -83,8 +77,6 @@ namespace HangmanApp
             this.helpPagePanel1.Name = "helpPagePanel1";
             this.helpPagePanel1.Size = new System.Drawing.Size(1280, 720);
             this.helpPagePanel1.TabIndex = 3;
-            this.helpPagePanel1.TreeChildren = null;
-            this.helpPagePanel1.TreeParent = this.mainMenuPanel1;
             // 
             // optionsMenuPanel1
             // 
@@ -95,8 +87,6 @@ namespace HangmanApp
             this.optionsMenuPanel1.Name = "optionsMenuPanel1";
             this.optionsMenuPanel1.Size = new System.Drawing.Size(1280, 720);
             this.optionsMenuPanel1.TabIndex = 4;
-            this.optionsMenuPanel1.TreeChildren = null;
-            this.optionsMenuPanel1.TreeParent = this.mainMenuPanel1;
             // 
             // MainForm
             // 

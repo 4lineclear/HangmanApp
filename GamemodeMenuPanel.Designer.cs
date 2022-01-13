@@ -164,6 +164,7 @@ namespace HangmanApp
         }
         #endregion
 
+        private System.Windows.Forms.TableLayoutPanel MainPanel;
         private System.Windows.Forms.Label MainTitle;
         private System.Windows.Forms.Button SingleplayerButton;
         private System.Windows.Forms.Button MultiplayerButton;

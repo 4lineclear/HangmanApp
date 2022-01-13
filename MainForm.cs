@@ -16,13 +16,20 @@ namespace HangmanApp
         public MainForm()
         {
             InitializeComponent();
-            Dictionary<ChildButton, TreeControl> MainMenuChildren = new Dictionary<ChildButton, TreeControl>();
-            Button[] buttons = mainMenuPanel1.AllChildButtons;
-            for (int i = 0; i < buttons.Length; i++)
+            AddChildrenComponents(mainMenuPanel1, new TreeControl[] {
+                gamemodeMenuPanel1, 
+                wordAssistMenuPanel1, 
+                helpPagePanel1, 
+                optionsMenuPanel1
+            });
+        }
+        private void AddChildrenComponents(TreeControl treeControl, TreeControl[] children)
+        {
+            for (int i = 0; i < treeControl.AllChildButtons.Length; i++)
             {
-                MainMenuChildren.Add((ChildButton)buttons[i], (TreeControl)this.Controls[i+1]);
+                treeControl.AddChild((ChildButton)treeControl.AllChildButtons[i], (TreeControl)children[i]);
             }
-            this.mainMenuPanel1.TreeChildren = MainMenuChildren;
+
         }
         private void MainForm_Load(object sender, EventArgs e)
         {

@@ -14,6 +14,7 @@ namespace HangmanApp
         public MainMenuPanel()
         {
             InitializeComponent();
+            base.MainPanel = this.MainPanel;
         }
         
     }

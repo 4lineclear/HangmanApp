@@ -169,6 +169,7 @@ namespace HangmanApp
 
         #endregion
 
+        private new System.Windows.Forms.TableLayoutPanel MainPanel;
         private System.Windows.Forms.Label MainTitle;
         private ChildButton PlayButton;
         private ChildButton WordAssistButton;

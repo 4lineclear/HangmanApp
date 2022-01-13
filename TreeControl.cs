@@ -12,12 +12,12 @@ namespace HangmanApp
     public class TreeControl : UserControl
     {
         [Category("Tree Properties")]
-        public TreeControl TreeParent { get; set; }
+        public TreeControl TreeParent { get; private set; }
         [Category("Tree Properties")]
-        public Dictionary<ChildButton,TreeControl> TreeChildren { get; set; }
+        public Dictionary<ChildButton,TreeControl> TreeChildren { get; }
         public TreeControl()
         {
-            
+            TreeChildren = new Dictionary<ChildButton, TreeControl>();
         }
         public TreeControl(TreeControl parent, Dictionary<ChildButton, TreeControl> children)
         {
@@ -39,7 +39,15 @@ namespace HangmanApp
                     yield return (ChildButton)button;
             }
         }
-
+        public void AddChild(ChildButton button, TreeControl child)
+        {
+            this.TreeChildren.Add(button, child);
+            child.SetParent(this);
+        }
+        private void SetParent(TreeControl parent)
+        {
+            this.TreeParent = parent;
+        }
         protected System.Windows.Forms.TableLayoutPanel MainPanel;
 
     }
