@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -14,6 +15,7 @@ namespace HangmanApp
         public WordAssistMenuPanel()
         {
             InitializeComponent();
+            base.MainPanel = this.MainPanel;
             this.CorrectLettersPanel.Controls.Add(CreateNextCorrectTextBox(1));
             this.CorrectLettersPanel.Controls.Add(CreateNextCorrectTextBox(2));
         }
@@ -44,10 +46,22 @@ namespace HangmanApp
                 Location = new System.Drawing.Point(3, 3),
                 MaxLength = 1,
                 Name = $"CorrectTextBox{count}",
-                Size = new System.Drawing.Size(26, 36),
-                TabIndex = count
+                PlaceholderText = $"{ count }",
+                Size = new System.Drawing.Size(28, 36),
+                TabIndex = count,
+                
             };
+            temp.TextChanged += new EventHandler(CorrectTextBox_TextChanged);
             return temp;
         }
+        private void CorrectTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!((TextBox)sender).Text.All(chr => char.IsLetter(chr)))
+            {
+                ((TextBox)sender).Text = "";
+                System.Media.SystemSounds.Beep.Play();
+            }
+        }
+
     }
 }

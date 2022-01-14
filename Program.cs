@@ -1,3 +1,5 @@
+using HangmanApp.Model;
+using HangmanApp.Presenter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +19,10 @@ namespace HangmanApp
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            var view = new MainForm();
+            var repo = new WordRepository();
+            var presenter = new WordAssistPresenter(repo, view);
+            Application.Run(view);
         }
     }
 }

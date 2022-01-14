@@ -22,6 +22,7 @@ namespace HangmanApp
                 helpPagePanel1, 
                 optionsMenuPanel1
             });
+            AddChildrenComponents(wordAssistMenuPanel1, new TreeControl[] { wordAssistPanel1 });
         }
         private void AddChildrenComponents(TreeControl treeControl, TreeControl[] children)
         {

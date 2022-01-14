@@ -36,6 +36,7 @@ namespace HangmanApp
             this.wordAssistMenuPanel1 = new HangmanApp.WordAssistMenuPanel();
             this.helpPagePanel1 = new HangmanApp.HelpPagePanel();
             this.optionsMenuPanel1 = new HangmanApp.OptionsMenuPanel();
+            this.wordAssistPanel1 = new HangmanApp.View.WordAssistPanel();
             this.SuspendLayout();
             // 
             // mainMenuPanel1
@@ -88,6 +89,16 @@ namespace HangmanApp
             this.optionsMenuPanel1.Size = new System.Drawing.Size(1280, 720);
             this.optionsMenuPanel1.TabIndex = 4;
             // 
+            // wordAssistPanel1
+            // 
+            this.wordAssistPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wordAssistPanel1.Location = new System.Drawing.Point(0, 0);
+            this.wordAssistPanel1.MaximumSize = new System.Drawing.Size(1280, 720);
+            this.wordAssistPanel1.MinimumSize = new System.Drawing.Size(1280, 720);
+            this.wordAssistPanel1.Name = "wordAssistPanel1";
+            this.wordAssistPanel1.Size = new System.Drawing.Size(1280, 720);
+            this.wordAssistPanel1.TabIndex = 5;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -98,6 +109,7 @@ namespace HangmanApp
             this.Controls.Add(this.wordAssistMenuPanel1);
             this.Controls.Add(this.helpPagePanel1);
             this.Controls.Add(this.optionsMenuPanel1);
+            this.Controls.Add(this.wordAssistPanel1);
             this.Name = "MainForm";
             this.Text = "Hangman";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -109,9 +121,10 @@ namespace HangmanApp
 
         private MainMenuPanel mainMenuPanel1;
         private GamemodeMenuPanel gamemodeMenuPanel1;
-        private WordAssistMenuPanel wordAssistMenuPanel1;
+        public WordAssistMenuPanel wordAssistMenuPanel1;
         private HelpPagePanel helpPagePanel1;
         private OptionsMenuPanel optionsMenuPanel1;
+        public View.WordAssistPanel wordAssistPanel1;
     }
 }
 
