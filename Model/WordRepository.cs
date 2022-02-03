@@ -145,6 +145,10 @@ namespace HangmanApp.Model
         {
             foreach (char letter in word)
             {
+                if (!char.IsLetter(letter))
+                {
+                    throw new Exception($"fuck fuck fuck fuck:{letter}");
+                }
                 LetterCount[char.ToUpper(letter) - 65]++;
 
             }

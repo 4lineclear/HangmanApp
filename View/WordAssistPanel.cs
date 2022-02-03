@@ -33,10 +33,20 @@ namespace HangmanApp.View
             IEnumerable<string> guesses;
             char BestGuess = Presenter.GetQualifyingWords( out guesses, CorrectLetters, IncorrectLetters);
             NextGuessLabel.Text = $"Recommended Next Guess: {char.ToUpper(BestGuess)}";
-            int count = 0;
+            WordGuessesLabel.Text = $"Guesses: {guesses.Count()}";
+            if (guesses.Count() > 1_000)
+            {
+                this.WordGuessesListView.Items.Add(
+                    new ListViewItem
+                    {
+                        Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point),
+                        ForeColor = Color.Red,
+                        Text = "Too Many Words! Please Restrict Search To Get Possible Guesses"
+                    });
+                return;
+            }
             foreach (string word in guesses)
             {
-                count++;
                 this.WordGuessesListView.Items.Add(
                     new ListViewItem
                     {
@@ -44,7 +54,6 @@ namespace HangmanApp.View
                         Text = word
                     });
             }
-            WordGuessesLabel.Text = $"Guesses: {count}";
         }
         private void CreateTextBoxs(IEnumerable<string> correctLetters)
         {

@@ -44,7 +44,5 @@ namespace HangmanApp
         {
             Presenter.StartAssist(this.CorrectLetters, this.IncorrectLetters);
         }
-
-        
     }
 }

@@ -18,12 +18,12 @@ namespace HangmanApp.View
                 letter = "";
             var temp = new TextBox
             {
-                Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point),
+                //16F
+                Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point),
                 Location = new System.Drawing.Point(3, 3),
                 MaxLength = 1,
                 Name = $"CorrectTextBox{LetterCount + 1}",
-                PlaceholderText = $"{ LetterCount + 1 }",
-                Size = new System.Drawing.Size(28, 36),
+                Size = new System.Drawing.Size(18, 36),//28
                 TabIndex = LetterCount,
                 Text = letter
             };

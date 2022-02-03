@@ -197,7 +197,7 @@ namespace HangmanApp
             this.WordLengthSlider.Dock = System.Windows.Forms.DockStyle.Top;
             this.WordLengthSlider.LargeChange = 3;
             this.WordLengthSlider.Location = new System.Drawing.Point(450, 241);
-            this.WordLengthSlider.Maximum = 22;
+            this.WordLengthSlider.Maximum = 31;
             this.WordLengthSlider.Minimum = 2;
             this.WordLengthSlider.Name = "WordLengthSlider";
             this.WordLengthSlider.Size = new System.Drawing.Size(760, 42);
