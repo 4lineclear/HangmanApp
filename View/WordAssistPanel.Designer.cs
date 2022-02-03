@@ -29,15 +29,18 @@ namespace HangmanApp.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.MainPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.NextGuessLabel = new System.Windows.Forms.Label();
             this.WordGuessesLabel = new System.Windows.Forms.Label();
-            this.WordGuessesPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.CorrectLettersLabel = new System.Windows.Forms.Label();
-            this.LettersGuessedListBox = new System.Windows.Forms.CheckedListBox();
+            this.IncorrectLettersListBox = new System.Windows.Forms.CheckedListBox();
             this.IncorrectLettersLabel = new System.Windows.Forms.Label();
             this.MainTitle = new System.Windows.Forms.Label();
             this.BackButton = new HangmanApp.ParentButton();
             this.CorrectLettersPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.WordGuessesListView = new System.Windows.Forms.ListView();
+            this.GuessesToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,14 +59,15 @@ namespace HangmanApp.View
             this.MainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.00002F));
             this.MainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.999955F));
             this.MainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.999955F));
+            this.MainPanel.Controls.Add(this.NextGuessLabel, 7, 7);
             this.MainPanel.Controls.Add(this.WordGuessesLabel, 4, 7);
-            this.MainPanel.Controls.Add(this.WordGuessesPanel, 4, 8);
             this.MainPanel.Controls.Add(this.CorrectLettersLabel, 4, 3);
-            this.MainPanel.Controls.Add(this.LettersGuessedListBox, 4, 6);
+            this.MainPanel.Controls.Add(this.IncorrectLettersListBox, 4, 6);
             this.MainPanel.Controls.Add(this.IncorrectLettersLabel, 4, 5);
             this.MainPanel.Controls.Add(this.MainTitle, 4, 0);
             this.MainPanel.Controls.Add(this.BackButton, 0, 0);
             this.MainPanel.Controls.Add(this.CorrectLettersPanel, 4, 4);
+            this.MainPanel.Controls.Add(this.WordGuessesListView, 4, 8);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
             this.MainPanel.Name = "MainPanel";
@@ -81,6 +85,18 @@ namespace HangmanApp.View
             this.MainPanel.Size = new System.Drawing.Size(1280, 720);
             this.MainPanel.TabIndex = 0;
             // 
+            // NextGuessLabel
+            // 
+            this.NextGuessLabel.AutoSize = true;
+            this.MainPanel.SetColumnSpan(this.NextGuessLabel, 4);
+            this.NextGuessLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.NextGuessLabel.Font = new System.Drawing.Font("Segoe UI", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NextGuessLabel.Location = new System.Drawing.Point(769, 529);
+            this.NextGuessLabel.Name = "NextGuessLabel";
+            this.NextGuessLabel.Size = new System.Drawing.Size(441, 42);
+            this.NextGuessLabel.TabIndex = 15;
+            this.NextGuessLabel.Text = "Recommended Next Guess:";
+            // 
             // WordGuessesLabel
             // 
             this.WordGuessesLabel.AutoSize = true;
@@ -92,16 +108,6 @@ namespace HangmanApp.View
             this.WordGuessesLabel.Size = new System.Drawing.Size(313, 46);
             this.WordGuessesLabel.TabIndex = 12;
             this.WordGuessesLabel.Text = "Guesses";
-            // 
-            // WordGuessesPanel
-            // 
-            this.WordGuessesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MainPanel.SetColumnSpan(this.WordGuessesPanel, 7);
-            this.WordGuessesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.WordGuessesPanel.Location = new System.Drawing.Point(450, 574);
-            this.WordGuessesPanel.Name = "WordGuessesPanel";
-            this.WordGuessesPanel.Size = new System.Drawing.Size(760, 90);
-            this.WordGuessesPanel.TabIndex = 11;
             // 
             // CorrectLettersLabel
             // 
@@ -115,18 +121,18 @@ namespace HangmanApp.View
             this.CorrectLettersLabel.TabIndex = 10;
             this.CorrectLettersLabel.Text = "Correct Letters";
             // 
-            // LettersGuessedListBox
+            // IncorrectLettersListBox
             // 
-            this.LettersGuessedListBox.BackColor = System.Drawing.SystemColors.Control;
-            this.LettersGuessedListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.LettersGuessedListBox.CheckOnClick = true;
-            this.MainPanel.SetColumnSpan(this.LettersGuessedListBox, 7);
-            this.LettersGuessedListBox.ColumnWidth = 58;
-            this.LettersGuessedListBox.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LettersGuessedListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LettersGuessedListBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LettersGuessedListBox.FormattingEnabled = true;
-            this.LettersGuessedListBox.Items.AddRange(new object[] {
+            this.IncorrectLettersListBox.BackColor = System.Drawing.SystemColors.Control;
+            this.IncorrectLettersListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.IncorrectLettersListBox.CheckOnClick = true;
+            this.MainPanel.SetColumnSpan(this.IncorrectLettersListBox, 7);
+            this.IncorrectLettersListBox.ColumnWidth = 58;
+            this.IncorrectLettersListBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.IncorrectLettersListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.IncorrectLettersListBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.IncorrectLettersListBox.FormattingEnabled = true;
+            this.IncorrectLettersListBox.Items.AddRange(new object[] {
             "A",
             "B",
             "C",
@@ -153,11 +159,12 @@ namespace HangmanApp.View
             "X",
             "Y",
             "Z"});
-            this.LettersGuessedListBox.Location = new System.Drawing.Point(450, 432);
-            this.LettersGuessedListBox.MultiColumn = true;
-            this.LettersGuessedListBox.Name = "LettersGuessedListBox";
-            this.LettersGuessedListBox.Size = new System.Drawing.Size(760, 65);
-            this.LettersGuessedListBox.TabIndex = 7;
+            this.IncorrectLettersListBox.Location = new System.Drawing.Point(450, 432);
+            this.IncorrectLettersListBox.MultiColumn = true;
+            this.IncorrectLettersListBox.Name = "IncorrectLettersListBox";
+            this.IncorrectLettersListBox.Size = new System.Drawing.Size(760, 65);
+            this.IncorrectLettersListBox.TabIndex = 7;
+            this.IncorrectLettersListBox.SelectedIndexChanged += new System.EventHandler(this.IncorrectLettersListBox_SelectedIndexChanged);
             // 
             // IncorrectLettersLabel
             // 
@@ -207,6 +214,24 @@ namespace HangmanApp.View
             this.CorrectLettersPanel.Size = new System.Drawing.Size(760, 114);
             this.CorrectLettersPanel.TabIndex = 9;
             // 
+            // WordGuessesListView
+            // 
+            this.WordGuessesListView.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.WordGuessesListView.Alignment = System.Windows.Forms.ListViewAlignment.Default;
+            this.MainPanel.SetColumnSpan(this.WordGuessesListView, 7);
+            this.WordGuessesListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WordGuessesListView.HideSelection = false;
+            this.WordGuessesListView.Location = new System.Drawing.Point(450, 574);
+            this.WordGuessesListView.MultiSelect = false;
+            this.WordGuessesListView.Name = "WordGuessesListView";
+            this.WordGuessesListView.Size = new System.Drawing.Size(760, 90);
+            this.WordGuessesListView.TabIndex = 14;
+            this.WordGuessesListView.TileSize = new System.Drawing.Size(150, 24);
+            this.GuessesToolTip.SetToolTip(this.WordGuessesListView, "Click on Guess to Open Googles Search\r\n");
+            this.WordGuessesListView.UseCompatibleStateImageBehavior = false;
+            this.WordGuessesListView.View = System.Windows.Forms.View.SmallIcon;
+            this.WordGuessesListView.SelectedIndexChanged += new System.EventHandler(this.GuessesListView_SelectedIndexChanged);
+            // 
             // WordAssistPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -228,10 +253,12 @@ namespace HangmanApp.View
         private System.Windows.Forms.Label MainTitle;
         private ParentButton BackButton;
         private System.Windows.Forms.Label IncorrectLettersLabel;
-        private System.Windows.Forms.CheckedListBox LettersGuessedListBox;
-        private System.Windows.Forms.FlowLayoutPanel CorrectLettersPanel;
+        private new System.Windows.Forms.CheckedListBox IncorrectLettersListBox;
+        private new System.Windows.Forms.FlowLayoutPanel CorrectLettersPanel;
         private System.Windows.Forms.Label CorrectLettersLabel;
         private System.Windows.Forms.Label WordGuessesLabel;
-        private System.Windows.Forms.FlowLayoutPanel WordGuessesPanel;
+        private System.Windows.Forms.ListView WordGuessesListView;
+        private System.Windows.Forms.ToolTip GuessesToolTip;
+        private System.Windows.Forms.Label NextGuessLabel;
     }
 }
